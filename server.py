@@ -9,7 +9,7 @@ server_ip = socket.gethostbyname(server)
 print(server_ip)
 
 try:
-    s.bind((server, port))
+    s.bind((server_ip, port))
 
 except socket.error as e:
     print(str(e))
