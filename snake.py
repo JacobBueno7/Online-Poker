@@ -1,4 +1,4 @@
-import pygame, sys, random
+import pygame, sys, random, socket
 from network import Network
 
 class Snake(object):
@@ -96,6 +96,7 @@ LEFT = (-1, 0)
 RIGHT = (1, 0)
 
 n = Network()
+n.client.connect(n.host, n.port)
 
 def main():
     pygame.init()
