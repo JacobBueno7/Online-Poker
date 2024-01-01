@@ -14,7 +14,7 @@ try:
 except socket.error as e:
     print(str(e))
 
-s.listen(2)
+s.listen(3)
 print("Waiting for players...")
 
 currentID = "0"
@@ -56,3 +56,4 @@ while True:
     print("Connected to :",addr)
 
     start_new_thread(threaded_client, (conn,))
+ 
