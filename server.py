@@ -3,9 +3,8 @@ from _thread import *
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-server = ''
-port = 5555
-server_ip = socket.gethostbyname(server)
+port = 23456
+server_ip = "192.168.0.7"
 print(server_ip)
 
 try:
@@ -27,7 +26,7 @@ def threaded_client(conn):
     reply = ''
     while True:
         try:
-            data = conn.recv(2048)
+            data = conn.recv(1024)
             reply = data.decode("utf-8")
             if not data:
                 conn.send(str.encode("Goodbye"))
